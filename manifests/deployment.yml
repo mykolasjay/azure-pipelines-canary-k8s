@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sampleapp
+  name: azure-pipelines-canary-k8s
   labels:
-    app: sampleapp
+    app: azure-pipelines-canary-k8s
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: sampleapp
+      app: azure-pipelines-canary-k8s
   template:
     metadata:
       annotations:
         prometheus.io/scrape: "true"
       labels:
-        app: sampleapp
+        app: azure-pipelines-canary-k8s
     spec:
       containers:
-      - name: sampleapp
+      - name: azure-pipelines-canary-k8s
         #replace <foobar> with your container registry. Example: contosodemo.azurecr.io
         image: azmjlt0001cr.azurecr.io/azure-pipelines-canary-k8s
         imagePullPolicy: Always
