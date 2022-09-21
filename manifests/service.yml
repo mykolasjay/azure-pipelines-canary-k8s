@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sampleapp
+  name: azure-pipelines-canary-k8s
   labels:
-    app: sampleapp
+    app: azure-pipelines-canary-k8s
 spec:
   selector:
-    app: sampleapp
+    app: azure-pipelines-canary-k8s
   ports:
   - name: metrics
     port: 8000
